@@ -18,7 +18,31 @@ button {
 }
 }
 </style>
+<script type="text/javascript">
+	function formCategory() {
+		// Make quick references to our fields
+		var name = document.getElementById('name');
+		var description = document.getElementById('description');
+		
+		if (notEmpty(name, "Category Name Should not be empty")) {
+			if (notEmpty(description, "Description Should not be empty")) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	function notEmpty(elem, helperMsg) {
+		if (elem.value.length == 0) {
+			alert(helperMsg);
+			elem.focus(); // set the focus to this input
+			return false;
+		}
+		return true;
+	}
 
+	
+	</script>
 </head>
 <body>
 
@@ -28,10 +52,10 @@ button {
 			
 			<h3 align="center" style="color: #27A4F7">Create a new category</h3>
 
-			<form action="newCategory"class="form-horizontal"  method="post" action="newCategory"  role="form" name="category">
+			<form action="newCategory" onsubmit="return formCategory()" class="form-horizontal"  method="post"   role="form" name="category">
 				<div style="color: #27A4F7" class="form-group">
 					<label for="text">Description about category:</label> 
-					<input  name="categoryName"class="form-control" placeholder="categoryName" type="text"  id="description"  >
+					<input  name="categoryName"class="form-control" placeholder="categoryName" type="text"  id="name"  >
 				</div>
 				<div style="color: #27A4F7" class="form-group">
 					<label for="text">Description about category Details:</label> 

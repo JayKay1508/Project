@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.niit.ShoppingKart.Dao.CartDao;
 import com.niit.ShoppingKart.Model.Cart;
 import com.niit.ShoppingKart.Model.Customer;
 import com.niit.ShoppingKart.Model.Product;
@@ -38,6 +39,9 @@ public class CartController {
 	public String Cart(Principal p,  Model model){
 		String username = p.getName();
 		List<Cart> cartList = cartService.list(username);
+		customer=customerService.get(p.getName());
+		long total=cartService.GrandTotal(customer.getId());
+		model.addAttribute("total",total);
 		model.addAttribute("cartList", cartList);
 		return "myCart";
 	}
@@ -83,7 +87,7 @@ public class CartController {
 				int qty = crt.getQuantity() + 1;
 				cart.setQuantity(qty);
 				cart.setTotal(qty * p.getPrice());
-				cartService.saveOrUpdate(cart);
+				cartService.save(cart);
 				
 			}else{
 				
@@ -100,7 +104,7 @@ public class CartController {
 			cart.setTotal(p.getPrice()*cart.getQuantity());
 			System.out.println("inside insert cartController");
 			
-			cartService.saveOrUpdate(cart);
+			cartService.save(cart);
 			
 			
 			}
@@ -121,6 +125,14 @@ public class CartController {
 		return "redirect:/checkout?user_name"+user_name;
 		
 	}
-	
+	@RequestMapping("/purchaseDetails")
+	public String purchaseDetails(Model model){
+		
+		List<Cart> cartList =  cartService.list();
+		model.addAttribute("cartList", cartList);
+		model.addAttribute("purchaseDetails", true);
+		return "admin";
+		
+	}
 
 }

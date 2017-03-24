@@ -14,6 +14,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 
@@ -22,16 +25,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class Customer {
 		
-		@Id
+	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
 		
 		
 private String username;
+
+
 private String firstname;
+
+
 private String lastname;
+
 private String email;
+
 private String phonenumber;
+
 private String password;
 private String apartmentNumber;
 private String streetName;

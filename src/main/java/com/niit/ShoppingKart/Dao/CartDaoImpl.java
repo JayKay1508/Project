@@ -44,9 +44,9 @@ public class CartDaoImpl implements CartDao{
 	}
 
 	@Transactional
-	public void saveOrUpdate(Cart cart) {
+	public void save(Cart cart) {
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(cart);
+		session.save(cart);
 		
 	}
 
@@ -94,6 +94,13 @@ public class CartDaoImpl implements CartDao{
 		}
 		return null;
 	}
+	@Transactional
+	public Long GrandTotal(int id) {
+		String hql = "select sum(total) from Cart where userId = " + "'" + id + "'" + "and status = '" + "N" +"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		Long sum = (Long) query.uniqueResult();
+			return sum;
+		}
 	
 	
 	

@@ -12,8 +12,9 @@ public interface CartDao {
 	
 	public Cart get(int id);
 	
-	public void saveOrUpdate(Cart cart);
+	public void save(Cart cart);
 	
+	public Long GrandTotal(int id);
 	
 	public void delete(int cartId);
 

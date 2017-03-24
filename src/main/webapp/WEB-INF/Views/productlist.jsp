@@ -39,6 +39,7 @@ width: 50%;
 	<h2 align="center">List of Products</h2>
 	
 	<c:forEach items="${productList}" var="product">
+	<c:if test="${pageContext.request.userPrincipal.name != null }">
 	<div class="list">
 	<a href="<spring:url value="productDetails/${product.pid}"/>">
 	<img src="<c:url value="resources/productImages/ProductId${product.pid}"/>" alt="${product.name}" width="100" height="100"/></a>
@@ -48,6 +49,18 @@ width: 50%;
 	
 <div id="container"><span>&#x20B9;</span>${product.price}</div>
 	</div>
+</c:if>
+<c:if test="${pageContext.request.userPrincipal.name == null }">
+	<div class="list">
+	<a href="<spring:url value="loginpage"/>">
+	<img src="<c:url value="resources/productImages/ProductId${product.pid}"/>" alt="${product.name}" width="100" height="100"/></a>
+	<h3>
+	${product.name}
+	</h3>
+	
+<div id="container"><span>&#x20B9;</span>${product.price}</div>
+	</div>
+</c:if>
 
 	</c:forEach>
 	

@@ -19,13 +19,14 @@ button {
 }
 }
 </style>
+		
 </head>
 <body>
 <div class="container" style="color: #1F618D">
 		<div class="jumbotron" style="background-color:#EAECEE">
 			
 			<h3 align="center" style="color: #27A4F7">Edit  your category</h3>
-			<form action="../editCategory"class="form-horizontal"  method="post"   role="form" name="category">
+			<form action="../editCategory"  class="form-horizontal"  method="post"   role="form" name="category">
 				<div style="color: #27A4F7" class="form-group">
 					<label for="text">Id of the category:</label> 
 					<input class="form-control"  type="text"  id="id" name="id" value="${category.id}" readonly>

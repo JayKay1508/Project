@@ -29,7 +29,7 @@
 			
 			<div style="color: #27A4F7" class="form-group">
 			<label for="text">Category:</label>
-				<select name="category">
+				<select name="category" class="form-control">
 				<option value="">Select Category</option>
 				<c:forEach items="${categoryList}" var="category">
 				<option value="${category.categoryName}">${category.categoryName}</option>
@@ -39,7 +39,7 @@
 			</div>
 			<div style="color: #27A4F7" class="form-group">
 			<label for="text">Manufacturer:</label>
-				<select name="mfg">
+				<select name="mfg" class="form-control">
 				<option value="">Select Supplier</option>
 				<c:forEach items="${supplierList}" var="supplier">
 				<option value="${supplier.name}">${supplier.name}</option>

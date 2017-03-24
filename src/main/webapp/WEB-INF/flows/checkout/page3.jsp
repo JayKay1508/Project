@@ -14,7 +14,8 @@
  <center><h1>Thank You!!! Your purchase is being dispatched</h1>
    <div class="item">
    <img src="<c:url value="resources/image/freight.jpg"/>" height=400px width=600px/></div>
-    </div>
     </center>
+    </div>
+   
 </body>
 </html>

@@ -40,7 +40,7 @@ function goBack() {
 		</tr>
 	</c:forEach>
 	<tr style="margin-top: 3em; ">
-	<td colspan="3" align="right">Grand Total Amount :</td>
+	<td colspan="4" align="right">Grand Total Amount :</td>
 	<td colspan="2">${total}</td>
 	</tr>
 	
@@ -51,7 +51,7 @@ function goBack() {
 <button type="button" name="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" style="float: left;"> Place Order<span class="caret"></span> </button>
 <ul class="dropdown-menu">
     
-      <li><a href="order/${pageContext.request.userPrincipal.name}">Cash On Delivery</a></li>
+      <li><a href="order/${pageContext.request.userPrincipal.name}">Order</a></li>
     </ul>
   </div>
 </div>

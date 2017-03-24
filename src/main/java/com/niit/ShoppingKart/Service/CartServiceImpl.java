@@ -31,8 +31,8 @@ public class CartServiceImpl implements CartService{
 	}
 
 	@Transactional
-	public void saveOrUpdate(Cart cart) {
-		cartDao.saveOrUpdate(cart);
+	public void save(Cart cart) {
+		cartDao.save(cart);
 		
 	}
 
@@ -59,6 +59,11 @@ public class CartServiceImpl implements CartService{
 	public Cart getByUserandProduct(int userId, int productId) {
 		// TODO Auto-generated method stub
 		return cartDao.getByUserandProduct(userId, productId);
+	}
+	@Transactional
+	public Long GrandTotal(int id) {
+		// TODO Auto-generated method stub
+		return cartDao.GrandTotal(id);
 	}
 
 }

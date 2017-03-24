@@ -44,6 +44,9 @@ margin-top: 10em 10em 10em 0em;
     <li><a href="viewSupplier">View Supplier</a></li>
   </ul>
 </li>
+
+				<button class="dropbtn" type="button" data-toggle="dropdown"><a href="purchaseDetails">Purchase Details</a></button>
+  
 </center>
 <c:choose>
 <c:when test="${not empty displayAddSupplier}">
@@ -73,8 +76,11 @@ margin-top: 10em 10em 10em 0em;
 <c:when test="${not empty editCategory}">
 <%@ include file="editCategory.jsp"%>
 </c:when>
+<c:when test="${not empty purchaseDetails}">
+<%@ include file="userCart.jsp"%>
+</c:when>
 <c:otherwise>
-<h1 align="middle">Welcome Admin!!</h1>
+<h1 align="left">Welcome Admin!!</h1>
 </c:otherwise>
 </c:choose>
 

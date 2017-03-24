@@ -31,6 +31,7 @@ function goBack() {
 <tr><td>Product Price : ${product.price}</td><br></tr>
 <tr><td>Manufacturer: ${product.mfg}</td></tr>
 </table>
+<b style="color:red">${message}</b>
 <button class="add-to-cart btn btn-default" ng-click="addtocart('${product.pid}')"type="button">add to cart</button>
 <button class="btn btn-default" onclick="goBack()">Go Back</button>
 </div>

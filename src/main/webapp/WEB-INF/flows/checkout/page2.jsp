@@ -24,10 +24,10 @@ body {
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
-                <div class="panel-heading">Payment</div>
+                <div class="panel-heading">Billing Address</div>
                 <div class="panel-body">
 
-<form action="billingAddress" class="form-horizontal"  method="post"   name="form" name="register" >
+<form class="form-horizontal"  method="post"   name="form" name="register" >
 
 <div class="form-group">
 <label for="firstname">FIRST NAME</label>
@@ -48,7 +48,7 @@ body {
 </div>
 <div class="form-group">
 <label for="username">USERNAME</label>
-<input name="username" id="username" type="text">
+<input name="username" id="username" type="text" class="form-control" placeholder="username">
 </div>
 <div class="form-group">
 <label for="apartmentNumber">APARTMENT NUMBER</label>
@@ -74,9 +74,7 @@ body {
 <label for="zipcode">ZIPCODE</label>
 <input name="zipcode" id="zipcode" type="text" class="form-control" placeholder="zipcode">
 </div>
-<input type="submit" value="register">
-                      
-                        
+                                        
                         <center><input type="submit" class="btn btn-primary m-t-10"  name="_eventId_pay" value="Back"></center>
                           <center><input type="submit" class="btn btn-primary m-t-10"  name="_eventId_thanku" value="submit"></center>
                     </form>

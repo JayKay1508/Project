@@ -13,8 +13,10 @@ public interface CartService {
 	public List<Cart> list();
 
 	public Cart get(int id);
+	
+	public Long GrandTotal(int id);
 
-	public void saveOrUpdate(Cart cart);
+	public void save(Cart cart);
 
 	public void delete(int cartId);
 
