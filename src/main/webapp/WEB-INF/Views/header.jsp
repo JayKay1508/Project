@@ -50,9 +50,9 @@ div.menu a
     z-index: 0;
     cursor: pointer;
 }
-.red
+.gray
 {	
-    background: #f44336;
+    background: #9e9e9e;
 }
 div.borderYtoX a:before, div.borderYtoX a:after
 {
@@ -134,7 +134,7 @@ ul {
 Welcome ${pageContext.request.userPrincipal.name}
 </c:if>
 	
-		<div class="menu red borderYtoX">
+		<div class="menu gray borderYtoX">
 			
 				<a href="home">Home</a>
 				<a href="aboutUs">About Us</a>

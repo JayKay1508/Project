@@ -58,7 +58,7 @@ width: 50%;
 	${product.name}
 	</h3>
 	
-<div id="container"><span>&#x20B9;</span>${product.price}</div>
+<div id="container"><span>Price &#8377;</span>${product.price}</div>
 	</div>
 </c:if>
 

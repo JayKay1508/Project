@@ -52,6 +52,10 @@
 										"PhoneNumber Should not be empty")) {
 									if (isNumeric(phone,
 											"Please enter a valid PhoneNumber")) {
+										if (phoneNumber(phone,
+										"Please enter a valid PhoneNumber")) {
+											
+										
 										if (notEmpty(email,
 												"EmailId Should not be empty")) {
 											if (emailValidator(email,
@@ -83,7 +87,7 @@
 														}
 													}
 												}
-											}
+											}}
 										}
 									}
 								}
@@ -96,6 +100,14 @@
 		return false;
 	}
 
+	function phoneNumber(elem, helperMsg) {
+		if (elem.value.length != 10) {
+			alert(helperMsg);
+			elem.focus(); // set the focus to this input
+			return false;
+		}
+		return true;
+	}
 	function notEmpty(elem, helperMsg) {
 		if (elem.value.length == 0) {
 			alert(helperMsg);
@@ -135,7 +147,7 @@
 		}
 	}
 	function emailValidator(elem, helperMsg) {
-		var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+		var emailExp = /^[\w\-\.\+]+\@[a-zA-Z\.\-]+\.[a-zA-z]{2,4}$/;
 		if (elem.value.match(emailExp)) {
 			return true;
 		} else {
